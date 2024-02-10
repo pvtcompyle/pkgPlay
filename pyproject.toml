@@ -18,5 +18,5 @@ where = "src"
 test = ["pytest"]
 
 [options.package_data]
-* = ["*.txt", "*.rst"]
+# * = ["*.txt", "*.rst"]
 pkgPlay = ["*.msg"]
