@@ -18,7 +18,7 @@ def make_logger(logFilepath='pkgPlay.log', loggerName=__name__, logLevel="WARNIN
     plain_formatter = logging.Formatter('%(levelname)s - %(asctime)s - %(filename)s:%(lineno)d:%(module)s:%(funcName)s) - %(message)s')
     logfile_handler.setFormatter(plain_formatter)
 
-    match logLevel.isupper():
+    match logLevel.upper():
         case "CRITICAL":
             logfile_handler.setLevel(logging.CRITICAL)
         case "ERROR":
