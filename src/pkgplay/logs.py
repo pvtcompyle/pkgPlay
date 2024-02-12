@@ -4,7 +4,7 @@ import os
 # from libFuncs.func_test import things
 
 
-def make_logger(logFilepath='pkgPlay.log', loggerName=__name__, logLevel="WARNING"):
+def make_logger(logFilepath='pkgPlay.log', loggerName=__name__.split('.')[0], logLevel="WARNING"):
     """Log plain text to file and terminal with colors"""
     
     # create log folder
