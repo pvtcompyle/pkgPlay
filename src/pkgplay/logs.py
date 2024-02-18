@@ -4,13 +4,13 @@ import os
 # from libFuncs.func_test import things
 
 
-def make_logger(logFilepath='pkgPlay.log', loggerName=__name__.split('.')[0], logLevel="WARNING"):
+def make_logger(logFilepath='pkgPlay.log', loggerName=__name__.split('.')[0], logLevel="NOTSET"):
     """Log plain text to file and terminal with colors"""
     
     # create log folder
-    if not os.path.exists('logs'):
-        os.mkdir('logs')
-    logFilepath = os.path.join(os.getcwd(), 'logs', f'{loggerName}.log')
+    if not os.path.exists(logFilepath):
+        os.mkdir(logFilepath)
+    logFilepath = os.path.join(os.getcwd(), logFilepath, f'{loggerName}.log')
     l = logging.getLogger(loggerName)
 
     # log to file
@@ -32,7 +32,7 @@ def make_logger(logFilepath='pkgPlay.log', loggerName=__name__.split('.')[0], lo
         case "NOTSET":
             logfile_handler.setLevel(logging.NOTSET)
         case _:
-            logfile_handler.setLevel(logging.WARNING)
+            logfile_handler.setLevel(logging.DEBUG)
     
     # Logging info level to stdout with colors
     terminal_handler = colorlog.StreamHandler()
@@ -65,7 +65,7 @@ def make_logger(logFilepath='pkgPlay.log', loggerName=__name__.split('.')[0], lo
         case "NOTSET":
             l.setLevel(logging.NOTSET)
         case _:
-            l.setLevel(logging.WARNING)
+            l.setLevel(logging.NOTSET)
     
     terminal_handler.setFormatter(color_formatter)
 
