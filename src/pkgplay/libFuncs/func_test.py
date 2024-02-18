@@ -1,5 +1,5 @@
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.getLogger()
 
 def things(**kwargs):
     logging.info('THINGS(): doing my thing')
